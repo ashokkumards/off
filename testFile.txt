@@ -1,1 +1,9 @@
-dfgd
+import base64
+import uuid
+
+def uuid_to_base64(str_uuid):
+    u = uuid.UUID(str_uuid)
+    # Get the 16-byte representation of the UUID
+    byte_array = u.bytes
+    # Encode to base64 and decode to a UTF-8 string
+    return base64.b64encode(byte_array).decode('utf-8')
